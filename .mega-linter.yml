@@ -1,6 +1,7 @@
 MARKDOWN_MARKDOWN_LINK_CHECK_CONFIG_FILE: .markdown-link-check.json
 
 REPOSITORY_KICS_ARGUMENTS: "--exclude-severities low,info"
+REPOSITORY_KINGFISHER_ARGUMENTS: "--exclude .git"
 
 # golangci-lint runs as a dedicated CI job with the correct Go version;
 # disabling here avoids version mismatch errors inside the MegaLinter image.
