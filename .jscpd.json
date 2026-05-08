@@ -1,0 +1,5 @@
+{
+  "minLines": 20,
+  "threshold": 10,
+  "ignore": ["**/*_test.go"]
+}

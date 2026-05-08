@@ -27,6 +27,14 @@ go.work.sum
 # env file
 .env
 
+wud-mcp
+wud-mcp.exe
+
 # Editor/IDE
 # .idea/
 # .vscode/
+tmp
+CLAUDE.md
+
+# MegaLinter reports (generated at CI runtime; secretlint ignores .gitignore patterns)
+megalinter-reports/
