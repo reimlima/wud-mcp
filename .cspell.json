@@ -24,6 +24,8 @@
     "jscpd",
     "kics",
     "lychee",
+    "lycheeignore",
+    "nolint",
     "marocchino",
     "megalinter",
     "modelcontextprotocol",

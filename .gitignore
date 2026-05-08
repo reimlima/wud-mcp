@@ -34,4 +34,7 @@ wud-mcp.exe
 # .idea/
 # .vscode/
 tmp
-# CLAUDE.md
+CLAUDE.md
+
+# MegaLinter reports (generated at CI runtime; secretlint ignores .gitignore patterns)
+megalinter-reports/
