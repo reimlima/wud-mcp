@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - uses: goreleaser/goreleaser-action@v6
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Generates SLSA Level 3 provenance attestations for released binaries and
+  # uploads the provenance file to the GitHub Release alongside the binaries.
+  #
+  # Required GitHub repository settings:
+  #   - Actions → General → Workflow permissions → "Read and write permissions"
+  #   - No additional secrets needed: uses GitHub OIDC (id-token: write) for signing.
+  provenance:
+    needs: release
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v2
+    with:
+      go-version: "1.22"
+      upload-assets: true
