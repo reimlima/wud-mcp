@@ -64,7 +64,7 @@ func TestNew_ZeroTimeout_FallsBackToDefault(t *testing.T) {
 }
 
 func TestDo_ConnectionRefused(t *testing.T) {
-	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {}))
+	srv := httptest.NewServer(http.HandlerFunc(func(_ http.ResponseWriter, _ *http.Request) {}))
 	t.Setenv("WUD_BASE_URL", srv.URL)
 	srv.Close()
 	c := client.New()

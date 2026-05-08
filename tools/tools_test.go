@@ -58,7 +58,7 @@ func okHandler(path, body string) http.Handler {
 }
 
 func errHandler() http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	return http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, "internal error", http.StatusInternalServerError)
 	})
 }
@@ -184,7 +184,7 @@ func TestRunContainerTrigger_Tool_MissingParams(t *testing.T) {
 }
 
 func TestDeleteContainer_Tool_Success(t *testing.T) {
-	s := setup(t, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	s := setup(t, http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusNoContent)
 	}))
 	result := call(t, s, "delete_container", map[string]any{"id": "abc"})

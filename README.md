@@ -7,7 +7,7 @@
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 [![MegaLinter](https://img.shields.io/badge/MegaLinter-enabled-brightgreen)](https://megalinter.io)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://github.com/reimlima/wud-mcp/blob/main/.github/dependabot.yml)
+[![Dependabot](https://img.shields.io/badge/dependabot-enabled-025E8C?logo=dependabot)](https://docs.github.com/en/code-security/dependabot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An MCP (Model Context Protocol) server that wraps the [WUD (What's Up Docker)](https://getwud.github.io/wud/) REST API, enabling AI assistants like Claude to interact with your self-hosted WUD instance.

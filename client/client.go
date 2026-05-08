@@ -21,7 +21,7 @@ type Client struct {
 func New() *Client {
 	baseURL := os.Getenv("WUD_BASE_URL")
 	if baseURL == "" {
-		baseURL = "http://localhost:3000"
+		baseURL = "http://localhost:3000" //nolint:revive // DevSkim: ignore DS162092
 	}
 
 	timeout := 10

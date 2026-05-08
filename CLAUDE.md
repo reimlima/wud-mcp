@@ -43,7 +43,8 @@ go mod tidy
 |---|---|---|
 | `ci` | push/PR | test, coverage, go vet, build |
 | `trivy` | push/PR | filesystem + dep CVE scan (SARIF → Security tab) |
-| `megalinter` | push/PR | lint all file types including Go (golangci-lint + revive) |
+| `golangci-lint` | push/PR | golangci-lint with correct Go version |
+| `megalinter` | push/PR | lint all file types including Go revive (golangci-lint disabled; runs as separate job) |
 | `lint-pr-title` | PR only | enforces Conventional Commits on PR title |
 | `govulncheck` | push/PR (after ci) | Go vulnerability database scan |
 | `provenance` | tag push | SLSA Level 3 attestation, uploaded to GitHub Release |
